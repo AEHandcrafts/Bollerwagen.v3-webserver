@@ -1,0 +1,61 @@
+{
+  "name": "tapw",
+  "private": true,
+  "version": "0.0.0",
+  "author": "David Adamson",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "concurrently --kill-others \"vite\" \"tsx watch --ignore 'vite.config.ts.timestamp-*.mjs' --ignore 'src/client/**/*' src/main.dev.ts\"",
+    "check:types": "vue-tsc --noEmit",
+    "check:format": "prettier --ignore-path .gitignore --check .",
+    "check:lint": "eslint --ext .vue,.ts --ignore-path .gitignore .",
+    "test:e2e": "cypress run --browser chrome",
+    "build": "vite build && esbuild src/main.prod.ts --bundle --sourcemap --platform=node --outfile=dist/main.js",
+    "start": "node --enable-source-maps dist/main.js",
+    "build:vercel": "vite build",
+    "build:netlify": "vite build && esbuild src/main.prod.netlify.ts --bundle --sourcemap --platform=neutral --outfile=netlify/edge-functions/index.js",
+    "build:cloudflare": "vite build && esbuild src/main.prod.cloudflare.ts --bundle --sourcemap --platform=neutral --outfile=functions/api/[[catchall]].js"
+  },
+  "engines": {
+    "node": "20.x"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.0.18",
+    "@fontsource-variable/jetbrains-mono": "^5.0.21",
+    "@hono/node-server": "^1.11.2",
+    "@iconify-icons/uil": "^1.2.3",
+    "@iconify/vue": "^4.1.2",
+    "@ts-rest/core": "^3.45.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "hono": "^3.12.12",
+    "radix-vue": "^1.8.3",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7",
+    "ts-rest-hono": "^0.5.0",
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@hono/swagger-ui": "^0.2.2",
+    "@ts-rest/open-api": "^3.45.2",
+    "@types/node": "^20.12.7",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/eslint-config-typescript": "^13.0.0",
+    "autoprefixer": "^10.4.19",
+    "concurrently": "^8.2.2",
+    "cypress": "^13.11.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-cypress": "^3.3.0",
+    "eslint-plugin-vue": "^9.26.0",
+    "postcss": "^8.4.38",
+    "prettier": "^3.3.0",
+    "tailwindcss": "^3.4.4",
+    "tsx": "^4.10.2",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.12",
+    "vue-tsc": "^2.0.21"
+  }
+}
