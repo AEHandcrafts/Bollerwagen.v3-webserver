@@ -6,6 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "dev": "concurrently --kill-others \"vite\" \"tsx watch --ignore 'vite.config.ts.timestamp-*.mjs' --ignore 'src/client/**/*' src/main.dev.ts\"",
+    "dev-bluetooth": "concurrently \"vite\" \"tsx watch --ignore 'vite.config.ts.timestamp-*.mjs' --ignore 'src/client/**/*' src/main.prod.bluetooth-server.ts\"",
     "check:types": "vue-tsc --noEmit",
     "check:format": "prettier --ignore-path .gitignore --check .",
     "check:lint": "eslint --ext .vue,.ts --ignore-path .gitignore .",
@@ -29,6 +30,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "hono": "^3.12.12",
+    "http-parser-js": "^0.5.8",
     "radix-vue": "^1.8.3",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
