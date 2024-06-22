@@ -1,8 +1,8 @@
 {
-  "name": "tapw",
+  "name": "bollerwagen.v3-webserver",
   "private": true,
   "version": "0.0.0",
-  "author": "David Adamson",
+  "author": "AEHandcrafts",
   "type": "commonjs",
   "scripts": {
     "dev": "concurrently --kill-others \"vite\" \"tsx watch --ignore 'vite.config.ts.timestamp-*.mjs' --ignore 'src/client/**/*' src/main.dev.ts\"",
