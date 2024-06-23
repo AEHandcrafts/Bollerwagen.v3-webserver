@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
-import { useServer } from "../composables/server";
 import { Icon } from "@iconify/vue";
 import githubIcon from "@iconify-icons/uil/github";
 import spinnerIcon from "@iconify-icons/uil/spinner-alt";
 import { Button } from "../components/ui/button";
+import { useBluetoothServer } from "../composables/bluetooth-server";
 
-const server = useServer();
+const server = useBluetoothServer();
 
 const names = [
   "Tap Water",
