@@ -33,7 +33,7 @@
     "hono": "^3.12.12",
     "http-parser-js": "^0.5.8",
     "http-request-mock": "^1.8.24",
-    "radix-vue": "^1.8.3",
+    "radix-vue": "^1.8.4",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "ts-rest-hono": "^0.5.0",
