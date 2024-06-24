@@ -1,7 +1,6 @@
 import { HTTPParser } from "http-parser-js";
 
-export function parseRequest(inputString: string): Request {
-  const input = Buffer.from(inputString);
+export function parseRequest(input: Buffer): Request {
   const parser = new HTTPParser(HTTPParser.REQUEST);
   let complete = false;
   let shouldKeepAlive;
@@ -50,8 +49,7 @@ export function parseRequest(inputString: string): Request {
   return new Request(url!);
 }
 
-export function parseResponse(inputString: string): Response {
-  const input = Buffer.from(inputString);
+export function parseResponse(input: Buffer): Response {
   const parser = new HTTPParser(HTTPParser.RESPONSE);
   let complete = false;
   let shouldKeepAlive;

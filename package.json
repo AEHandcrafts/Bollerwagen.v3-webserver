@@ -27,6 +27,7 @@
     "@iconify-icons/uil": "^1.2.3",
     "@iconify/vue": "^4.1.2",
     "@ts-rest/core": "^3.45.2",
+    "bleno": "^0.5.0",
     "buffer": "^6.0.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -44,6 +45,7 @@
   "devDependencies": {
     "@hono/swagger-ui": "^0.2.2",
     "@ts-rest/open-api": "^3.45.2",
+    "@types/bleno": "^0.4.6",
     "@types/node": "^20.12.7",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vue/eslint-config-prettier": "^9.0.0",
