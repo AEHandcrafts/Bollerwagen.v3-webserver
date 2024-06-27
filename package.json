@@ -6,7 +6,6 @@
   "type": "commonjs",
   "scripts": {
     "dev": "concurrently --kill-others \"vite\" \"tsx watch --ignore 'vite.config.ts.timestamp-*.mjs' --ignore 'src/client/**/*' src/main.dev.ts\"",
-    "dev-bluetooth": "concurrently \"vite\" \"tsx watch --ignore 'vite.config.ts.timestamp-*.mjs' --ignore 'src/client/**/*' src/main.prod.bluetooth-server.ts\"",
     "check:types": "vue-tsc --noEmit",
     "check:format": "prettier --ignore-path .gitignore --check .",
     "check:lint": "eslint --ext .vue,.ts --ignore-path .gitignore .",

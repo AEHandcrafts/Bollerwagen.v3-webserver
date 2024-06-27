@@ -4,13 +4,12 @@ import { Icon } from "@iconify/vue";
 import githubIcon from "@iconify-icons/uil/github";
 import spinnerIcon from "@iconify-icons/uil/spinner-alt";
 import { Button } from "../components/ui/button";
-import { useBluetoothServer } from "../composables/bluetooth-server";
+import { useServer } from "../composables/server";
 
-const server = useBluetoothServer();
+const server = useServer();
 
 const names = [
   "Tap Water",
-  "Tap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap WaterTap Water.",
   "Vue",
   "Cloudflare",
   "ts-rest",
@@ -30,7 +29,7 @@ const loading = ref(false);
 watch(name, async (name) => {
   try {
     loading.value = true;
-    const { body } = await server.req.greet({ params: { name: names[name % names.length] } });
+    const { body } = await server.greet({ params: { name: names[name % names.length] } });
     greeting.value = body;
   } catch (_) {
     greeting.value = "some unexpected error occurred 😰";
@@ -62,7 +61,6 @@ watch(name, async (name) => {
           <Icon :icon="githubIcon" width="20" class="inline align-text-bottom" />
           <span class="font-bold">GitHub</span>
         </Button>
-        <Button variant="secondary" @click="server.connect()">Connect to bluetooth</Button>
       </div>
     </div>
   </div>
